@@ -2,6 +2,7 @@
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
+using Metrics.Library.Models;
 
 namespace Metrics.Library
 {
@@ -22,6 +23,15 @@ namespace Metrics.Library
 			finally
 			{
 				stopwatch.Stop();
+
+				var requestResult = new RequestResult
+				{
+					ElapsedMilliseconds = stopwatch.ElapsedMilliseconds,
+					Url = request.RequestUri.LocalPath,
+					Successful = successful
+				};
+
+				// Log here the RequestResult
 			}
 		}
 	}
