@@ -6,12 +6,12 @@ using Metrics.Library.Models;
 
 namespace Metrics.Library
 {
-	public class MetricHttpClientHandler : HttpClientHandler
+	public class MetricsHttpClientHandler : HttpClientHandler
 	{
 		protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
 		{
 			bool successful = false;
-			var stopwatch = Stopwatch.StartNew();
+			var stopwatch = Stopwatch.StartNew(); // to measure time
 
 			try
 			{
