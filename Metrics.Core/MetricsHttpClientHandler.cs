@@ -6,6 +6,9 @@ using Metrics.Core.Models;
 
 namespace Metrics.Core
 {
+	/// <summary>
+	/// HttpClient Handler
+	/// </summary>
 	public class MetricsHttpClientHandler : HttpClientHandler
 	{
 		protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
@@ -22,8 +25,9 @@ namespace Metrics.Core
 			}
 			finally
 			{
-				stopwatch.Stop();
+				stopwatch.Stop(); // Stopping timer
 
+				// Creating RequestResult
 				var requestResult = new RequestResult
 				{
 					ElapsedMilliseconds = stopwatch.ElapsedMilliseconds,
