@@ -2,9 +2,9 @@
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
-using Metrics.Library.Models;
+using Metrics.Core.Models;
 
-namespace Metrics.Library
+namespace Metrics.Core
 {
 	public class MetricsHttpClientHandler : HttpClientHandler
 	{
