@@ -36,6 +36,8 @@ namespace Metrics.Core
 				};
 
 				// Log here the RequestResult
+				// Example
+				// _logService.LogRequest(requestResult);
 			}
 		}
 	}
